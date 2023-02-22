@@ -1,7 +1,7 @@
 import React from "react";
-import { Text, TouchableNativeFeedback, TouchableWithoutFeedback, View } from "react-native";
-import { StyleSheet } from "react-native";
-import { Link } from "react-router-native";
+import { Button, Text, TouchableNativeFeedback, TouchableWithoutFeedback, View, StyleSheet } from "react-native";
+import { Link, useNavigate } from "react-router-native";
+import { types } from "../types/types";
 
 const styles = StyleSheet.create({
     container: {
@@ -27,13 +27,15 @@ const AppBarTap = ({active, children, to}) => {
     )
 }
 
+
 const Appbar = () =>{
     return(
         <View style={styles.container}>
             <AppBarTap active to="/perfil">Mi Perfil</AppBarTap>
             <AppBarTap active to="/servicio">Servicios</AppBarTap>
             <AppBarTap active to="/reserva">Mis Reservas</AppBarTap>
-            <AppBarTap active to="/singout">Cerrar Sesión</AppBarTap>
+            <AppBarTap active to="/login">Cerrar Sesión</AppBarTap>
+            
         </View>
     )
 }

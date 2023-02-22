@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const Reserva = () =>{
     return (
         <View>
-            <Text>Agenda</Text>
+            <Text>Ver mis reservas</Text>
         </View>
     )
 }
