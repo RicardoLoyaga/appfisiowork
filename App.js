@@ -1,10 +1,18 @@
+import React from 'react';
 import Main from './src/components/Main';
-import Login from './src/components/Login';
-import Reserva from './src/Reserva';
+import { NativeRouter } from 'react-router-native';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  return <Reserva />
-
+  return (
+    <>
+    <StatusBar style='light'/>
+    <NativeRouter>
+      <Main />
+    </NativeRouter>
+    </>
+  )
+  
 }
 
 
