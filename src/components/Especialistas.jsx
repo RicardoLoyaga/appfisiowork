@@ -28,7 +28,7 @@ const Especialistas = () => {
                 data={tespecialistas}
                 keyExtractor = {(item) => item.idespecialista}
                 renderItem={(item) => <ListaEspecialistas item={item}/>}
-                ItemSeparatorComponent = { () => <Text style={{marginBottom:10,}}/>}/>
+                ItemSeparatorComponent = { () => <Text style={{marginBottom:3,}}/>}/>
         </SafeAreaView>
     )
 }

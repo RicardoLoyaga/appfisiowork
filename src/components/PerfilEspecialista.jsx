@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Text, StyleSheet,SafeAreaView,View, Image } from "react-native";
 import { AuthContext } from "../auth/AuthContext";
-import ObtenerDatosPorCorreo from "./ObtenerDatosPorCorreo";
+import ObtenerDatosEspecialistaPorCorreo from "./ObtenerDatosEspecialistaPorCorreo";
 
-const Perfil = () => {
+
+const PerfilEspecialista = () => {
 
     const { user } = useContext(AuthContext);
 
@@ -11,7 +12,7 @@ const Perfil = () => {
     const [datos, setDatos] = useState('');
 
     const datosObtenidos = async () => {
-        const obtieneDatos = await ObtenerDatosPorCorreo(email);
+        const obtieneDatos = await ObtenerDatosEspecialistaPorCorreo(email);
         setDatos(obtieneDatos);
     }
 
@@ -24,23 +25,23 @@ const Perfil = () => {
     return(
         <SafeAreaView style={{marginHorizontal:10,}}>
             <Image 
-                source={{uri: `data:image/jpeg;base64,${datos.fotocliente}`}}
+                source={{uri: `data:image/jpeg;base64,${datos.fotoespecialista}`}}
                 style={{ widht: 250 , height: 250,  
                     resizeMode: 'contain'}}/>
             <View style={styles.container}>
                 
                 <Text style={styles.textEncabezados}>Nombres Completos: </Text>
-                <Text style={styles.text}> {datos.nombrecliente} {datos.apellidocliente}</Text>
+                <Text style={styles.text}> {datos.nombreespecialista} {datos.apellidocliente}</Text>
                 <Text style={styles.textEncabezados}>Dirección domiciliaria: </Text>
-                <Text style={styles.text}>{datos.direccioncliente}</Text>
+                <Text style={styles.text}>{datos.direccionespecialista}</Text>
                 <Text style={styles.textEncabezados}>Correo electrónico: </Text>
-                <Text style={styles.text}>{datos.correocliente}</Text>
+                <Text style={styles.text}>{datos.correoespecialista}</Text>
                 <Text style={styles.textEncabezados}>Fecha de nacimiento: </Text>
-                <Text style={styles.text}>{datos.fechanacimientocliente}</Text>
+                <Text style={styles.text}>{datos.fechanacimientoespecialista}</Text>
                 <Text style={styles.textEncabezados}>Identificación: </Text>
-                <Text style={styles.text}>{datos.identificacioncliente}</Text>
+                <Text style={styles.text}>{datos.identificacionespecialista}</Text>
                 <Text style={styles.textEncabezados}>Teléfono de contacto: </Text>
-                <Text style={styles.text}>{datos.telefonocliente}</Text>
+                <Text style={styles.text}>{datos.telefonoespecialista}</Text>
             </View>
         </SafeAreaView>
     )
@@ -64,4 +65,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Perfil
+export default PerfilEspecialista

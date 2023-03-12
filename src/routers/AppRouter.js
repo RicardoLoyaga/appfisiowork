@@ -6,6 +6,7 @@ import Login from '../components/Login';
 import { PanelRouter } from './PanelRouter';
 import { PanelRouterCliente } from './PanelRouterCliente';
 import { PrivateRouter } from './PrivateRouter';
+import { PanelRouterEspecialista } from './PanelRouterEspecialista';
 
 export const AppRouter = () => {
 
@@ -14,18 +15,23 @@ export const AppRouter = () => {
     return (
         <NativeRouter>
             <View>
+            <Routes>
+                <Route exact path="/login" element={<Login />} />
                 {
-                    user.email === 'themuralla15@gmail.com' ?
-                        <Routes>
-                            <Route exact path="/login" element={<Login />} />
-                            <Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouter />} />} />
-                        </Routes>
-                        :
-                        <Routes>
-                            <Route exact path="/login" element={<Login />} />
-                            <Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouterCliente />} />} />
-                        </Routes>
-                }
+                        (() => {
+                            if (user.email == 'THEMURALLA15@GMAIL.COM') {
+                                return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouter />} />} />)
+                            } else if (user.email == 'ERIKA_ANNABELL@HOTMAIL.COM') {
+                                return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouterEspecialista />} />} />)
+                            } else {
+                                return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouterCliente />} />} />)
+                            }
+                        })()
+                    }
+            </Routes>
+                
+
+                    
                 
             </View>
         </NativeRouter>

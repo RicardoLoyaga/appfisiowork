@@ -4,6 +4,7 @@ import { AppRouter } from './src/routers/AppRouter';
 import { authReducer } from './src/auth/authReducer';
 import { AuthContext } from './src/auth/AuthContext';
 import 'localstorage-polyfill'; 
+import Navegacion from './src/components/Navegacion';
 
 const init = () => {
   return JSON.parse(global.localStorage.getItem('user')) || { logged: false };
@@ -19,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style='dark'/>
+      <StatusBar style='light'/>
       <AuthContext.Provider value={{user, dispatch}} >
         <AppRouter />
       </AuthContext.Provider>

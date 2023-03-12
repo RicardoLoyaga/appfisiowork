@@ -28,16 +28,15 @@ const AppBarTap = ({active, children, to}) => {
 }
 
 
-const Appbar = () =>{
+const AppbarEspecialista = () =>{
     return(
         <View style={styles.container}>
-            <AppBarTap active to="/perfil">Mi Perfil</AppBarTap>
-            <AppBarTap active to="/servicio">Servicios</AppBarTap>
-            <AppBarTap active to="/reservas">Mis Reservas</AppBarTap>
-            <AppBarTap active to="/login">Cerrar Sesión</AppBarTap>
-            
+            <AppBarTap active to="/perfilespecialista">Mi Perfil</AppBarTap>
+            <AppBarTap active to="/misreservasespecialista">Mis Reservas</AppBarTap>
+            <AppBarTap active to="/pacientes">Pacientes</AppBarTap>
+            <AppBarTap active to="/login" >Cerrar Sesión</AppBarTap>
         </View>
     )
 }
 
-export default Appbar
+export default AppbarEspecialista

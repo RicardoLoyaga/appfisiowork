@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-const ListaEspecialistas = ({item}) =>{
+const ListarReservas = ({item}) =>{
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>{item.item.nombreespecialista} {item.item.apellidoespecialista}</Text>
+            <Text style={styles.text}>Fecha cita: {item.item.fechareserva}</Text>
+            <Text style={styles.text}>Hora cita: {item.item.horareserva}</Text>
+            <Text style={styles.text}>Observaciones: {item.item.observacionreserva}</Text>
         </View>
     )
 }
@@ -24,4 +25,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ListaEspecialistas
+export default ListarReservas
