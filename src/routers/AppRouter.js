@@ -21,7 +21,7 @@ export const AppRouter = () => {
                         (() => {
                             if (user.email == 'THEMURALLA15@GMAIL.COM') {
                                 return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouter />} />} />)
-                            } else if (user.email == 'ERIKA_ANNABELL@HOTMAIL.COM') {
+                            } else if (user.email == 'ERIKA_ANNABELL@HOTMAIL.COM' || user.email == 'FERNANDA@GMAIL.COM') {
                                 return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouterEspecialista />} />} />)
                             } else {
                                 return (<Route path="/*" element={<PrivateRouter estaAutenticado={user.logged} element={<PanelRouterCliente />} />} />)

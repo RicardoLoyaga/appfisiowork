@@ -31,7 +31,7 @@ const PerfilEspecialista = () => {
             <View style={styles.container}>
                 
                 <Text style={styles.textEncabezados}>Nombres Completos: </Text>
-                <Text style={styles.text}> {datos.nombreespecialista} {datos.apellidocliente}</Text>
+                <Text style={styles.text}> {datos.nombreespecialista} {datos.apellidoespecialista}</Text>
                 <Text style={styles.textEncabezados}>Dirección domiciliaria: </Text>
                 <Text style={styles.text}>{datos.direccionespecialista}</Text>
                 <Text style={styles.textEncabezados}>Correo electrónico: </Text>

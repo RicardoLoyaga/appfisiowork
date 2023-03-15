@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 const ListaMisReservas = ({item}) =>{
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Fecha cita: {item.item.fechareserva}</Text>
+            <Text style={styles.text}>Fecha cita: {(item.item.fechareserva)?.split("T")[0]}</Text>
             <Text style={styles.text}>Hora cita: {item.item.horareserva}</Text>
             <Text style={styles.text}>Observaciones: {item.item.observacionreserva}</Text>
         </View>

@@ -33,6 +33,7 @@ const AppbarCliente = () =>{
         <View style={styles.container}>
             <AppBarTap active to="/perfil">Mi Perfil</AppBarTap>
             <AppBarTap active to="/misreservas">Mis Reservas</AppBarTap>
+            <AppBarTap active to="/agendarmicita">Agendar</AppBarTap>
             <AppBarTap active to="/login" >Cerrar Sesión</AppBarTap>
         </View>
     )

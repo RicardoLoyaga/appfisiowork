@@ -18,7 +18,7 @@ const MisReservas = () => {
         setDatos(obtieneDatos.treservas);
     }
 
-    console.log(datos)
+    //console.log(datos)
 
     useEffect(() => {
         datosObtenidos();
